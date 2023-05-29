@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngularColorPickerAppComponent implements OnInit {
   mau = 'black';
+
   constructor() { }
 
   ngOnInit(): void {

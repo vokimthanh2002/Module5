@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
   result: number = undefined;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
   cong(first: string, second: string) {
     this.result = +first + +second;
   }
@@ -26,5 +29,6 @@ export class CalculatorComponent implements OnInit {
   chia(first: string, second: string) {
     this.result = +first / +second;
   }
+
 
 }

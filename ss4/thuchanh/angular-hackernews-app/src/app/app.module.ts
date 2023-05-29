@@ -8,6 +8,7 @@ import { LikeComponent } from './like/like.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     LikeComponent,
     NavbarComponent,
     FooterComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    CountdownTimerComponent
   ],
     imports: [
         BrowserModule,

@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LikeComponent } from './like/like.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { FormsigninComponent } from './formsignin/formsignin.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,13 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     NavbarComponent,
     FooterComponent,
     ProgressBarComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    FormsigninComponent
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

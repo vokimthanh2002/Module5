@@ -1,0 +1,8 @@
+.btn {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+.btn:hover {
+  border-collapse: collapse;
+  background-image: radial-gradient(circle, #f6f6f6 0%, #00d1ff 100%);
+}

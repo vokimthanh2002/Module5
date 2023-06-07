@@ -1,0 +1,111 @@
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelAdd"><i class="fa-sharp fa-solid fa-user-plus" style="color: #4dff00;"></i>
+  Create new Employee
+</button>
+
+<!-- Add New Modal -->
+<div class="modal fade overflow-scroll" id="modelAdd" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+     data-bs-keyboard="false" data-bs-backdrop="static">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <form action="" [formGroup]="formEmployee" (ngSubmit)="addEmployee()">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modelTitleId">Create new </h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-brands fa-xbox" style="color: #ff0000;"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <!--    <label for="idEmployee" class="form-label">Id Customer</label>-->
+            <input #id
+                   type="text" hidden class="form-control" id="idEmployee" formControlName="id" >
+          </div>
+
+          <div class="mb-3">
+            <label for="nameEmployee" class="form-label">Ten Employee</label>
+            <input #id
+                   type="text" class="form-control" id="nameEmployee" formControlName="nameEmployee" >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.required">Ten khong duoc de trong</p>-->
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.minlength">ten khong duoc be hon 5 ki tu</p>-->
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.maxlength">ten khong duoc lon hon 50 ki tu</p>-->
+
+
+          <div class="mb-3">
+            <label for="birthday" class="form-label">Ngay sinh EmPloyee</label>
+            <input #id
+                   type="date" class="form-control" id="birthday" formControlName="birthday" >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.birthday?.touched && formCustomer.controls.birthday?.errors?.required">Ngay sinh khong duoc de trong</p>-->
+
+          <div class="mb-3">
+            <label for="idCard" class="form-label">Id Card Customer</label>
+            <input #id
+                   type="text" class="form-control" id="idCard" formControlName="idCard" >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.idCard?.touched && formCustomer.controls.idCard?.errors?.required">ID card khong duoc de trong</p>-->
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.idCard?.touched && formCustomer.controls.idCard?.errors?.pattern">Khong dung dinh dang</p>-->
+
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone number Customer</label>
+            <input #id
+                   type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.phoneNumber?.touched && formCustomer.controls.phoneNumber?.errors?.required">So dien thoai khong duoc de trong</p>-->
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.phoneNumber?.touched && formCustomer.controls.phoneNumber?.errors?.pattern">Khong dung dinh dang</p>-->
+          <div class="mb-3">
+            <label for="wage" class="form-label">Wage Customer</label>
+            <input #id
+                   type="text" class="form-control" id="wage" formControlName="wage" >
+          </div>
+          <div class="mb-3">
+            <label for="selectOption" class="form-label">Options</label>
+            <select class="form-select" id="selectOption" formControlName="location">
+              <option value="">-- Select an option --</option>
+              <option *ngFor="let location of locations "  value="{{location.idLocation}}">{{location.nameLocation}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="selectOption1" class="form-label">Options</label>
+            <select class="form-select" id="selectOption1" formControlName="level">
+              <option value="">-- Select an option --</option>
+              <option *ngFor="let level of levels "  value="{{level.idLevel}}">{{level.nameLevel}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="selectOption2" class="form-label">Options</label>
+            <select class="form-select" id="selectOption2" formControlName="part">
+              <option value="">-- Select an option --</option>
+              <option *ngFor="let part of parts "  value="{{part.idPart}}">{{part.namePart}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Employee</label>
+            <input #id
+                   type="email" class="form-control" id="email" formControlName="email" >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.email?.touched && formCustomer.controls.email?.errors?.required">Email khong duoc de trong</p>-->
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.email?.touched && formCustomer.controls.email?.errors?.email">Khong dung dinh dang</p>-->
+
+          <div class="mb-3">
+            <label for="address" class="form-label">Address Employee</label>
+            <input #id
+                   type="email" class="form-control" id="address" formControlName="address"  >
+          </div>
+<!--          <p class="text-danger" *ngIf="formCustomer.controls.address?.touched && formCustomer.controls.address?.errors?.required">Dia chi khong duoc de trong</p>-->
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success" data-bs-dismiss="modal" [disabled]="formEmployee.invalid">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

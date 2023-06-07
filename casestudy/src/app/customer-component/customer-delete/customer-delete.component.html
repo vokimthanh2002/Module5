@@ -1,0 +1,265 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport"-->
+<!--        content="width=device-width, user-scalable=no, initial-scale=1">-->
+<!--  <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--  <title>Title</title>-->
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"-->
+<!--        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 style="text-align: center"><b><i>Danh sách khách hàng</i></b> </h1>-->
+<!--&lt;!&ndash;<a class="btn btn-info" routerLink="/customer/create" >Thêm mới khách hàng</a>&ndash;&gt;-->
+<!--<app-customer-create></app-customer-create>-->
+<!--<div style="margin-left: 700px; margin-bottom: 20px" class="container mt-5">-->
+<!--  <form class="row g-3 align-items-center">-->
+<!--    <div class="col-auto">-->
+<!--      <input #inputSearch-->
+<!--             class="form-control me-2" type="text" placeholder="Search" aria-label="Search">-->
+<!--    </div>-->
+<!--    <div class="col-auto">-->
+<!--      <button class="btn btn-primary" (click)="search(inputSearch)">Search</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+<!--<table class="table table-{1:striped} table-inverse">-->
+<!--  <thead class="thead-inverse">-->
+<!--  <tr>-->
+<!--    <th>Id Customer</th>-->
+<!--    <th>Name Customer</th>-->
+<!--    <th>Birthday</th>-->
+<!--    <th>Id Card</th>-->
+<!--    <th>Phone Number</th>-->
+<!--    <th>Email</th>-->
+<!--    <th>Name Type</th>-->
+<!--    <th>Address</th>-->
+<!--    <th>Choose</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let c of customers ; index as i">-->
+<!--    <td scope="row">{{c.id}}</td>-->
+<!--    <td>{{c.nameCustomer}}</td>-->
+<!--    <td>{{c.birthday}}</td>-->
+<!--    <td>{{c.idCard}}</td>-->
+<!--    <td>{{c.phoneNumber}}</td>-->
+<!--    <td>{{c.email}}</td>-->
+<!--    <td>{{c.typeCustomer.nameTypeCustomer}}</td>-->
+<!--    <td>{{c.address}}</td>-->
+<!--    <td>-->
+<!--      <a style="margin-right: 10px"  class="btn btn-outline-primary" routerLink="/customer/update/{{c.id}}"><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #8cff00;"></i></a>-->
+<!--      <a  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete"  (click)=getCustomerDelete(c.id)><i class="fa-solid fa-trash-can" style="color: #ff0000;"></i></a>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--&lt;!&ndash;<section class="product-galary-one">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="product-galary-one-content">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div style="margin:5px" class="product-galary-one-content-product">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="product-galary-one-content-product-item" *ngFor="let c of customers ; index as i">&ndash;&gt;-->
+<!--&lt;!&ndash;          &lt;!&ndash;              <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;          <img  data-bs-toggle="modal" data-bs-target="#imgDetall"  (click)=getCustomerDelete(c.id) style="max-width: 100%" src="{{c.link}}" alt="...">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="product-galary-one-content-product-item-text">&ndash;&gt;-->
+<!--&lt;!&ndash;            <li>Group: Vip girl</li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li style="color: white">{{c.nameCustomer}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li style="color: white">{{c.phoneNumber}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li style="color: white">{{c.address}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li> <a class="btn btn-outline-success" >Xem thông tin</a>&ndash;&gt;-->
+<!--&lt;!&ndash;              <a style="margin-right: 10px"  class="btn btn-outline-primary" routerLink="/customer/update/{{c.id}}"><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #8cff00;"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;              <a  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete"  (click)=getCustomerDelete(c.id)><i class="fa-solid fa-trash-can" style="color: #ff0000;"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="fas fa-star"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="fas fa-star"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="fas fa-star"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="fas fa-star"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <i class="fas fa-star"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+<!--<h3 style="color: white; text-align: center" *ngIf="mgs">Không tìm thấy thông tin nào liên quan</h3>-->
+<!--<div class="container">-->
+<!--  <div class="square one"></div>-->
+<!--  <div class="square two"></div>-->
+<!--  <div class="square three"></div>-->
+<!--  <div class="square four"></div>-->
+<!--</div>-->
+<!--<div style="text-align: center">-->
+<!--  <button class="btn"  *ngIf="!mgs"  (click)="page_first()"><i class="fa-solid fa-angles-left" style="color: #005eff;"></i></button>-->
+<!--  <button class="btn"  *ngIf="!mgs" (click)="page_prev()"><i class="fa-solid fa-chevron-left" style="color: #005eff;"></i></button>-->
+<!--  <span *ngIf="currentPage <=1 && !mgs">-->
+<!--    <button class="btn"  (click)="page_current(currentPage = 1)">1</button>-->
+<!--    <button class="btn"  (click)="page_current(currentPage = 2)">2</button>-->
+<!--    <button class="btn"  (click)="page_current(currentPage =3)">3</button>-->
+<!--    <button class="btn">...</button>-->
+<!--  </span>-->
+<!--  <span *ngIf="currentPage >1 && currentPage < sumPage +1 && !mgs">-->
+<!--    <button *ngIf="currentPage >2" class="btn">...</button>-->
+<!--     <button class="btn"  (click)="page_current(currentPage-1)">{{currentPage-1}}</button>-->
+<!--    <button class="btn"  (click)="page_current(currentPage)">{{currentPage}}</button>-->
+<!--    <button class="btn"  (click)="page_current(currentPage+1)">{{currentPage+1}}</button>-->
+<!--    <button  *ngIf="currentPage < sumPage" class="btn">...</button>-->
+<!--  </span>-->
+<!--  <span *ngIf="currentPage >= sumPage + 1 && !mgs">-->
+<!--    <button class="btn">...</button>-->
+<!--     <button class="btn"  (click)="page_current(sumPage-1)">{{sumPage-1}}</button>-->
+<!--    <button class="btn"  (click)="page_current(sumPage)">{{sumPage}}</button>-->
+<!--    <button class="btn"  (click)="page_current(sumPage+1)">{{sumPage+1}}</button>-->
+<!--  </span>-->
+<!--  <button class="btn" *ngIf="!mgs"   (click)="page_next()"><i class="fa-solid fa-angle-right" style="color: #005eff;"></i></button>-->
+<!--  <button class="btn" *ngIf="!mgs"    (click)="page_last()"><i class="fa-solid fa-angles-right" style="color: #005eff;"></i></button>-->
+<!--  <span *ngIf="!mgs"  style="color: white">Page: {{currentPage}}/{{sumPage+1}}</span>-->
+
+<!--</div>-->
+<!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content" style="background-color: #ffffff">-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title text-danger" id="modelTitleId">Thông báo: Xóa khách hàng</h4>-->
+<!--        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">-->
+<!--          <i class="fa-brands fa-xbox" style="color: #ff0000;"></i>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <p>Bạn có chắc chắn muốn xóa khách hàng này không?</p>-->
+<!--        <ul>-->
+<!--          <li ><img height="100%" width="100%" src="{{customer.link}}"></li>-->
+<!--          <li>ID: {{ customer?.id }}</li>-->
+<!--          <li>Name: {{ customer?.nameCustomer }}</li>-->
+<!--          <li>Birthday: {{ customer?.birthday }}</li>-->
+<!--          <li>Id Card: {{ customer?.idCard }}</li>-->
+<!--          <li>Phone Number: {{ customer?.phoneNumber }}</li>-->
+<!--          <li>Type Customer: {{ customer?.typeCustomer.nameTypeCustomer }}</li>-->
+<!--          <li>Email: {{ customer?.email }}</li>-->
+<!--          <li>Address: {{ customer?.address }}</li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--        <button (click)="delete(customer?.id)" data-bs-dismiss="modal" type="button" class="btn btn-primary">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<!--&lt;!&ndash; Update New Modal&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="modal fade overflow-scroll" id="update" tabindex="-1" role="dialog" aria-labelledby="modelTitleId1" aria-hidden="true"&ndash;&gt;-->
+<!--&lt;!&ndash;     data-bs-keyboard="false" data-bs-backdrop="static">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="modal-dialog modal-lg" role="document">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="modal-content">&ndash;&gt;-->
+<!--&lt;!&ndash;      <form action="" [formGroup]="formCustomer" (ngSubmit)="update()">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="modal-header">&ndash;&gt;-->
+<!--&lt;!&ndash;          <h4 class="modal-title" id="modelTitleId1">Update customer </h4>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&ndash;&gt;-->
+<!--&lt;!&ndash;            <span aria-hidden="true">&times;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="modal-body">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <label for="id" class="form-label">Id Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="text" readonly  class="form-control" id="id" formControlName="id" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="nameCustomer" class="form-label">Ten Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="text" class="form-control" id="nameCustomer" formControlName="nameCustomer" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.required">Ten khong duoc de trong</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.minlength">ten khong duoc be hon 5 ki tu</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.nameCustomer?.touched && formCustomer.controls.nameCustomer?.errors?.maxlength">ten khong duoc lon hon 50 ki tu</p>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="birthday" class="form-label">Ngay sinh Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="date" class="form-control" id="birthday" formControlName="birthday" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.birthday?.touched && formCustomer.controls.birthday?.errors?.required">Ngay sinh khong duoc de trong</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="idCard" class="form-label">Id Card Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="text" class="form-control" id="idCard" formControlName="idCard" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.idCard?.touched && formCustomer.controls.idCard?.errors?.required">ID card khong duoc de trong</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.idCard?.touched && formCustomer.controls.idCard?.errors?.pattern">Khong dung dinh dang</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="phoneNumber" class="form-label">Phone number Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.phoneNumber?.touched && formCustomer.controls.phoneNumber?.errors?.required">So dien thoai khong duoc de trong</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.phoneNumber?.touched && formCustomer.controls.phoneNumber?.errors?.pattern">Khong dung dinh dang</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="selectOption" class="form-label">Options</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <select class="form-select" id="selectOption" formControlName="typeCustomer">&ndash;&gt;-->
+<!--&lt;!&ndash;              <option value="">&#45;&#45; Select an option &#45;&#45;</option>&ndash;&gt;-->
+<!--&lt;!&ndash;              <option *ngFor="let typeCustomer of typeCustomers "  value="{{typeCustomer.idTypeCustomer}}">{{typeCustomer.nameTypeCustomer}}</option>&ndash;&gt;-->
+<!--&lt;!&ndash;            </select>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="email" class="form-label">Email Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="email" class="form-control" id="email" formControlName="email" >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.email?.touched && formCustomer.controls.email?.errors?.required">Email khong duoc de trong</p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.email?.touched && formCustomer.controls.email?.errors?.email">Khong dung dinh dang</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="address" class="form-label">Address Customer</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input #id&ndash;&gt;-->
+<!--&lt;!&ndash;                   type="email" class="form-control" id="address" formControlName="address"  >&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="text-danger" *ngIf="formCustomer.controls.address?.touched && formCustomer.controls.address?.errors?.required">Dia chi khong duoc de trong</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="modal-footer">&ndash;&gt;-->
+<!--&lt;!&ndash;          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button type="submit" class="btn btn-success" data-bs-dismiss="modal" [disabled]="formCustomer.invalid">&ndash;&gt;-->
+<!--&lt;!&ndash;            Save&ndash;&gt;-->
+<!--&lt;!&ndash;          </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </form>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;//&ndash;&gt;-->
+
+<!--&lt;!&ndash; Img New Modal&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="modal fade overflow-scroll" id="imgDetall" tabindex="-1" role="dialog" aria-labelledby="modelTitleId1" aria-hidden="true"&ndash;&gt;-->
+<!--&lt;!&ndash;     data-bs-keyboard="false" data-bs-backdrop="static">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="modal-dialog modal-lg" role="document">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="modal-content">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div data-bs-dismiss="modal" class="modal-body">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="thu-nghiem-zoom">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <img width="100%" height="100%" src="{{customer.link}}">&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->

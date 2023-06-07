@@ -1,0 +1,49 @@
+<button style="background-color: white; color: #005eff; margin-left: 50px;;margin-top: 5px" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelLogin">
+  Đăng nhập
+</button>
+
+<!-- Add New Modal -->
+<div class="modal fade overflow-scroll" id="modelLogin" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+     data-bs-keyboard="false" data-bs-backdrop="static">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <form action="" >
+        <div class="modal-header">
+          <h4 style="text-align: center" class="modal-title" id="modelTitleId">Đăng nhập </h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-brands fa-xbox" style="color: #ff0000;"></i>
+          </button>
+        </div>
+        <div class="modal-body" style=" background-image: url('https://baoninhbinh.org.vn//DATA/ARTICLES/2021/5/17/cuoc-dua-lot-vao-top-100-anh-dep-di-san-van-hoa-va-thien-7edf3.jpg');">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="card mt-5">
+                  <div class="card-header">
+                    <h3 class="text-center">Đăng nhập</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Tên đăng nhập</label>
+                      <input #userName
+                        type="text" class="form-control" id="username" placeholder="Nhập tên đăng nhập">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Mật khẩu</label>
+                      <input #password
+                        type="password" class="form-control" id="password" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="d-grid">
+                      <button data-bs-dismiss="modal" (click)="login(userName,password)" type="button" class="btn btn-primary">Đăng nhập</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,202 @@
+.modal {
+  Z-index: 99999;
+}
+
+body {
+  padding: 100px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+table {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(0, 0, 238) 0%, rgba(47,47,47,1) 100%);
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #333;
+  color: #0008ff;
+}
+
+tr:nth-child(even) {
+  background-color: #000000;
+}
+th {
+  color: #01c7f5;
+}
+
+/* Thiết lập đường viền cho các phần tử */
+td {
+  color: #01c7f5;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+
+/* Hiển thị hover khi di chuột vào hàng */
+tr:hover {
+  border-collapse: collapse;
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  color: white;
+}
+.btn {
+  border: 1px solid blue;
+  margin: 2px;
+  color: blue;
+}
+.btn:hover {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(0, 0, 238) 0%, rgba(47,47,47,1) 100%);
+}
+h1 {
+  color: #ffffff;
+}
+
+
+/*--------------slider-product-----------*/
+.slide-product-one-content-container{
+  position: relative;
+  overflow: hidden;
+}
+.slide-product-one-content-btn{
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.slide-product-one-content-btn i{
+  color: #333;
+  font-size: 32px;
+  height: 50px;
+  width: 25px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  border-radius: 5px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.slider-product-one-content-items-content{
+  position: relative;
+  height: 520px;
+  transition: all  0.3s ease ;
+}
+.slider-product-one-content-items{
+  position: absolute;
+}
+.slider-product-one-content-items:nth-child(2){
+  transform: translateX(100%);
+}
+.slider-product-one-content-items:nth-child(3){
+  transform: translateX(200%);
+}
+/*--------------product-gallery---*/
+.product-galary-one-content-product{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.product-galary-one-content-product-item{
+  width: 24%;
+  margin: 5px;
+  padding: 50px 12px 12px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.product-galary-one-content-product-item:hover{
+  box-shadow: 3px 3px 3px #ddd;
+}
+.product-galary-one-content-product-item:hover > img{
+
+}
+.product-galary-one-content-product-item >img{
+  width: 100%;
+}
+.product-galary-one-content-product-item-text{
+  padding-top: 20px;
+}
+.product-galary-one-content-product-item-text li{
+  margin-bottom: 6px;
+}
+.product-galary-one-content-product-item-text li:first-child{
+
+  color: #ff0000;
+
+}
+.product-galary-one-content-product-item-text li:first-child p{
+  color: #ffa706;
+}
+.product-galary-one-content-product-item-text li:first-child img{
+  width: 30px;
+  float: left;
+  margin-right: 6px;
+}
+.product-galary-one-content-product-item-text li:last-child i{
+  color:#ef7604c7;
+}
+.product-galary-one-content-product-item-text li:nth-child(2):hover{
+
+  color: #f16e0a;
+}
+.product-galary-one-content-product-item-text li:nth-child(3) a {
+
+  text-decoration: line-through;
+  color: #333;
+}
+.product-galary-one-content-product-item-text li:nth-child(4) {
+
+  font-weight: bold;
+}
+.product-galary-one{
+  margin-top: 30px;
+
+}
+.product-galary-one-content-title{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.product-galary-one-content-title h2{
+  color: #333;
+}
+.product-galary-one-content-title ul li a{
+  color: #333;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+.product-galary-one-content-title ul{
+  display: flex;
+}
+.product-galary-one-content-title ul li{
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  margin-left: 12px;
+  border-radius: 40px;
+}
+.product-galary-one-content-title ul li:hover{
+  color: tomato;
+}
+.thu-nghiem-zoom img{
+  display:block;
+  transition: all .3s ease;
+}
+.thu-nghiem-zoom img:hover{
+  transform: scale(1.5); /* cỡ zoom khi di chuột vào */
+}
+.thu-nghiem-zoom div{
+  display:block;
+  overflow: hidden;
+}
+.modal-body {
+  padding: 0;
+}
+
+

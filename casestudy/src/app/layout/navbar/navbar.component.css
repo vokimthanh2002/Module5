@@ -1,0 +1,12 @@
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 20px;
+}
+nav {
+  position: fixed;
+  Z-index: 9999;
+  width: 100%;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+  border: 1px solid white;
+}

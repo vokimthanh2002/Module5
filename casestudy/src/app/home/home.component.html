@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+  <title>Trang chủ</title>
+  <style>
+    /* CSS */
+    #search {
+      background-color: #f9f9f9;
+      padding: 40px 0;
+    }
+
+    #search .container {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #search h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #search form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    #search input[type="text"],
+    #search input[type="date"],
+    #search input[type="number"] {
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #search button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Phần Tại sao chọn chúng tôi? */
+    #features {
+      background-color: #fff;
+      padding: 60px 0;
+    }
+
+    #features .container {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #features h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .feature img {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: #777;
+    }
+
+    /* Phần Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      #search .container {
+        padding: 0 20px;
+      }
+
+      #search form {
+        flex-wrap: wrap;
+      }
+
+      #search input[type="text"],
+      #search input[type="date"],
+      #search input[type="number"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      #search button {
+        width: 100%;
+      }
+
+      #features .container {
+        padding: 0 20px;
+      }
+    }
+    body {
+      padding-top: 75px;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #0081ff;
+      padding: 20px;
+    }
+
+    #hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    #hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    #hero .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #ffffff;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      #hero {
+        height: 300px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+    .container5 {
+      display: flex;
+      margin-top: 20px;
+    }
+    #map {
+      height: 200px;
+      width: 100%;
+    }
+    .child {
+      flex: 1;
+    }
+    .checkbox {
+      margin: 15px;
+    }
+    .container2 {
+      display: flex;
+    }
+    .btn {
+      height: 40px;
+      border: 1px solid blue;
+      color: blue;
+    }
+    .container3{
+      display: flex;
+      margin-top: 20px;
+      padding: 5px;
+      border: 1px solid rgb(190, 163, 163);
+    }
+  </style>
+</head>
+<body>
+
+<section id="hero">
+  <video src="assets/video/Download2.mp4" autoplay loop muted></video>
+  <div class="content">
+    <h1>Chào mừng đến với trang web đặt phòng khách sạn</h1>
+    <p>Tìm kiếm và đặt phòng khách sạn dễ dàng và nhanh chóng</p>
+    <button class="btn btn-outline-info">Đặt phòng ngay</button>
+  </div>
+</section>
+
+<!-- Các phần còn lại của trang web -->
+<section id="search">
+  <div class="container">
+    <h2>Tìm kiếm khách sạn</h2>
+    <form>
+      <input type="text" placeholder="Nhập địa điểm hoặc tên khách sạn">
+      <input type="date" placeholder="Ngày nhận phòng">
+      <input type="date" placeholder="Ngày trả phòng">
+      <input type="number" placeholder="Số lượng người">
+      <button>Tìm kiếm</button>
+    </form>
+  </div>
+</section>
+<div class="container" style="border: 1px solid #bdbaba;max-width: 1200px; display: flex;">
+  <div class="child" style="padding-left: 20px; flex: 1;">
+    <h3><b>Tiết kiệm từ 10% trở lên ở Đà Nẵng</b></h3>
+    <small>Đăng nhập để có thể lập tức mở khóa giảm giá và quản lý chuyến đi một cách dễ dàng</small>
+    <p><a href="/login">Đăng nhập</a> hoặc <a href="signup">Tạo tài khoản</a></p>
+  </div>
+  <div class="child">
+    <img style="margin-left: 250px;" src="https://t-cf.bstatic.com/design-assets/assets/v3.68.0/illustrations-traveller/GeniusRewardGiftBoxDiscount.png">
+  </div>
+</div>
+<div class="container5" >
+  <div class="child" style="padding-left: 20px;max-width: 400px;">
+<!--    //map-->
+<!--    <div >-->
+<!--      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.744482722349!2d108.20977277505358!3d16.078743884602122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421847a1230591%3A0x5a5c3bd36a8bd2b9!2zMDIgVGhhbmggU8ahbiwgVGhhbmggQsOsbmgsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1685828994833!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<!--    </div>-->
+    <div style="border: 1px solid rgb(209, 196, 196);margin-top: 20px;padding: 20px;">
+      <h4>Chọn lọc theo</h4>
+      <hr>
+      <h4>Xếp hạng 5 sao</h4>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="5 sao">5 sao<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="4 sao">4 sao<br>
+      <input class="checkbox"  style=" transform: scale(2.5);" type="checkbox" name="sao" value="3 sao">3 sao<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="2 sao">2 sao<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type = "checkbox" name= "sao" value="1 sao">1 sao<br>
+      <h4>Điểm đánh giá của khách</h4>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="5 sao">Tuyệt hảo: 9 điểm trở lên<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="4 sao">Rất tốt: 8 điểm trở lên<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="3 sao">Tốt: 7 điểm trở lên<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type="checkbox" name="sao" value="2 sao">Dễ chịu: 6 điểm trở lên<br>
+      <input class="checkbox" style=" transform: scale(2.5);" type = "checkbox" name= "sao" value="1 sao">Khá: 5 điểm trở lên<br>
+    </div>
+  </div>
+  <div class="child" style="margin-left: 20px;">
+    <h2>Đà Nẵng – 1,290 khách sạn và chỗ nghỉ khác </h2>
+    <div class="container2"  >
+      <button style="background-color: blue;color: aliceblue;" class="btn">Lựa chọn hàng đầu của chúng tôi</button>
+      <button style="width: 215px" class="btn">Ưu tiên giá thấp nhất</button>
+      <button style="width: 210px" class="btn">Xếp hạng sao và giá</button>
+      <button style="width: 210px" class="btn">Được đánh giá hàng đầu</button>
+    </div>
+    <div style="border: 1px solid red; margin-top: 10px;border-radius: 2%;background-color: #eba5a5; width: 900px;height: 50px;">
+      <p> Xem giá và ưu đãi mới nhất bằng cách chọn ngày lưu trú.<a href="#">Chọn ngày</a><i class="fa-light fa-question" style="color: #ff0000"></i> </p>
+    </div>
+    <div  class="container3" style="width: 900px" >
+      <img src="https://cf.bstatic.com/xdata/images/hotel/square200/382103718.webp?k=13916c341d35a848135026e46d86de748d3b280842fb6077dd2cf54655bee719&o=">
+      <div style="padding-left: 5px;width: 400px;">
+        <h4 style="color: blue;">Sapphire Boutique Hotel Da Nang </h4>
+        <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Khách sạn ở biển Mỹ Khê, Đà Nẵng </p>
+        <small>Tọa lạc tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê 600 m, Sapphire Boutique Hotel Da Nang cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, khu vườn và sảnh khách chung.</small>
+        <p><a href="">Hiển thị thêm </a></p>
+      </div>
+      <div style="margin-left: 30px;">
+        <p>Tuyệt vời</p>
+        <small>1,133 đánh giá</small>
+        <p>Giá từ</p>
+        <h4 style="color: green;"><b>VND 222.880</b></h4>
+        <p>Mỗi đêm</p>
+        <button style="background-color: blue;height: 40px;color: azure;">Kiểm tra phòng trống</button>
+      </div>
+    </div>
+    <div  class="container3"  style="width: 900px">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/square200/398898999.webp?k=3201f1b3eb90355af9e587434f73fb0fc6326eb9aac60c441a8dcdbdde1e75df&o=">
+      <div style="padding-left: 5px;width: 400px;">
+        <h4 style="color: blue;">Sapphire Boutique Hotel Da Nang </h4>
+        <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Khách sạn ở biển Mỹ Khê, Đà Nẵng </p>
+        <small>Tọa lạc tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê 600 m, Sapphire Boutique Hotel Da Nang cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, khu vườn và sảnh khách chung.</small>
+        <p><a href="">Hiển thị thêm </a></p>
+      </div>
+      <div style="margin-left: 30px;">
+        <p>Tuyệt vời</p>
+        <small>1,133 đánh giá</small>
+        <p>Giá từ</p>
+        <h4 style="color: green;"><b>VND 222.880</b></h4>
+        <p>Mỗi đêm</p>
+        <button style="background-color: blue;height: 40px;color: azure;">Kiểm tra phòng trống</button>
+      </div>
+    </div>
+    <div  class="container3"  style="width: 900px" >
+      <img src="https://cf.bstatic.com/xdata/images/hotel/square200/419569762.webp?k=be8c4fbb2fc83fd65f40e8ecc91205a7453346ea79b8defe27e12f76fc7b1572&o=">
+      <div style="padding-left: 5px;width: 400px;">
+        <h4 style="color: blue;">Sapphire Boutique Hotel Da Nang </h4>
+        <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Khách sạn ở biển Mỹ Khê, Đà Nẵng </p>
+        <small>Tọa lạc tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê 600 m, Sapphire Boutique Hotel Da Nang cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, khu vườn và sảnh khách chung.</small>
+        <p><a href="">Hiển thị thêm </a></p>
+      </div>
+      <div style="margin-left: 30px;">
+        <p>Tuyệt vời</p>
+        <small>1,133 đánh giá</small>
+        <p>Giá từ</p>
+        <h4 style="color: green;"><b>VND 222.880</b></h4>
+        <p>Mỗi đêm</p>
+        <button style="background-color: blue;height: 40px;color: azure;">Kiểm tra phòng trống</button>
+      </div>
+    </div>
+    <div  class="container3"  style="width: 900px" >
+      <img src="https://cf.bstatic.com/xdata/images/hotel/square200/376080001.webp?k=a41af2db79ad4b87568652708a9768cfdb9053b7cd14d3bdcdd472a1fe1d66f0&o=">
+      <div style="padding-left: 5px;width: 400px;">
+        <h4 style="color: blue;">Sapphire Boutique Hotel Da Nang </h4>
+        <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Khách sạn ở biển Mỹ Khê, Đà Nẵng </p>
+        <small>Tọa lạc tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê 600 m, Sapphire Boutique Hotel Da Nang cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, khu vườn và sảnh khách chung.</small>
+        <p><a href="">Hiển thị thêm </a></p>
+      </div>
+      <div style="margin-left: 30px;">
+        <p>Tuyệt vời</p>
+        <small>1,133 đánh giá</small>
+        <p>Giá từ</p>
+        <h4 style="color: green;"><b>VND 222.880</b></h4>
+        <p>Mỗi đêm</p>
+        <button style="background-color: blue;height: 40px;color: azure;">Kiểm tra phòng trống</button>
+      </div>
+    </div>
+    <div  class="container3"  style="width: 900px" >
+      <img src="https://cf.bstatic.com/xdata/images/hotel/square200/370522900.webp?k=3ae232fa0989de303672ce141422c18df6d597b5f5d4fa09677b0c0fa1db8f2b&o=">
+      <div style="padding-left: 5px;width: 400px;">
+        <h4 style="color: blue;">Sapphire Boutique Hotel Da Nang </h4>
+        <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Khách sạn ở biển Mỹ Khê, Đà Nẵng </p>
+        <small>Tọa lạc tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê 600 m, Sapphire Boutique Hotel Da Nang cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, khu vườn và sảnh khách chung.</small>
+        <p><a href="">Hiển thị thêm </a></p>
+      </div>
+      <div style="margin-left: 30px;">
+        <p>Tuyệt vời</p>
+        <small>1,133 đánh giá</small>
+        <p>Giá từ</p>
+        <h4 style="color: green;"><b>VND 222.880</b></h4>
+        <p>Mỗi đêm</p>
+        <button style="background-color: blue;height: 40px;color: azure;">Kiểm tra phòng trống</button>
+      </div>
+    </div>
+    <button style="margin-top: 10px; background-color: #005eff; color: white">Xem tất cả khách sạn ở Đà Nẵng</button>
+  </div>
+</div>
+<section class="product-galary-one">
+  <div class="container">
+    <div class="product-galary-one-content">
+      <div class="product-galary-one-content-title">
+        <h2><b>Những khách sạn được đặt nhiều nhất ở Đà Nẵng trong tháng qua</b></h2>
+      </div>
+      <div class="product-galary-one-content-product">
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/213490721.jpg?k=800fd2b0afd1ea6e5211c99d96f672f11fc61d947be119442268bc8821839a87&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/389604482.jpg?k=8a82818156e6129f2ffa8aba3bf29c0aed6f0b5c323e9af8864d15c50f23477c&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Merry Land Hotel Da Nang</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/441969495.jpg?k=dd5677a85dee2b51810a955b7892669a8a93bc1f24fe2769d219b168e3a1ff18&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Flower Boutique Hotel</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/419569762.jpg?k=be8c4fbb2fc83fd65f40e8ecc91205a7453346ea79b8defe27e12f76fc7b1572&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/292022931.webp?k=89649596e8cc03ca7e88e9b90e86049f48faf86868aace1cff4116e53b4b8bf1&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/253999826.webp?k=984492f105cb9acf6dbaf498d30953bb24f37dd74e244858dd905cbb339a89ae&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/239846786.webp?k=382e9f0a6996bd108ea6d6b03316053ccc9806ff56f66243a868f33659903aa3&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/437821011.webp?k=49ccee0f427c5761caa57e8a7dda6c437cd86e247d9f09c31425e1ef6da7af0b&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/382803145.webp?k=ce72a4dc50364670e67dcd508f1568a5db460e7ba790267925acd6d9843218e6&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/344692963.webp?k=a0f76f1838aa069023df97b43c70146442555e7f813ec5cf6f059259817c1d9f&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/449584038.webp?k=0feefd3dd446ae29ce117df8c68103cd005905fa83e654b5eda958134b0a4ed9&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/363977953.webp?k=48e01f2649a2f8ce0a122750d143ad8d86a25156331b27f87ba5030b2832a217&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="product-galary-one">
+  <div class="container">
+    <div class="product-galary-one-content">
+      <div class="product-galary-one-content-title">
+        <h2><b>Những khách sạn có bữa sáng tốt nhất Đà Nẵng</b></h2>
+      </div>
+      <div class="product-galary-one-content-product">
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/213490721.jpg?k=800fd2b0afd1ea6e5211c99d96f672f11fc61d947be119442268bc8821839a87&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/389604482.jpg?k=8a82818156e6129f2ffa8aba3bf29c0aed6f0b5c323e9af8864d15c50f23477c&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Merry Land Hotel Da Nang</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/441969495.jpg?k=dd5677a85dee2b51810a955b7892669a8a93bc1f24fe2769d219b168e3a1ff18&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Flower Boutique Hotel</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/419569762.jpg?k=be8c4fbb2fc83fd65f40e8ecc91205a7453346ea79b8defe27e12f76fc7b1572&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/292022931.webp?k=89649596e8cc03ca7e88e9b90e86049f48faf86868aace1cff4116e53b4b8bf1&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/253999826.webp?k=984492f105cb9acf6dbaf498d30953bb24f37dd74e244858dd905cbb339a89ae&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/239846786.webp?k=382e9f0a6996bd108ea6d6b03316053ccc9806ff56f66243a868f33659903aa3&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/437821011.webp?k=49ccee0f427c5761caa57e8a7dda6c437cd86e247d9f09c31425e1ef6da7af0b&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/382803145.webp?k=ce72a4dc50364670e67dcd508f1568a5db460e7ba790267925acd6d9843218e6&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/344692963.webp?k=a0f76f1838aa069023df97b43c70146442555e7f813ec5cf6f059259817c1d9f&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/449584038.webp?k=0feefd3dd446ae29ce117df8c68103cd005905fa83e654b5eda958134b0a4ed9&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/363977953.webp?k=48e01f2649a2f8ce0a122750d143ad8d86a25156331b27f87ba5030b2832a217&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="product-galary-one">
+  <div class="container">
+    <div class="product-galary-one-content">
+      <div class="product-galary-one-content-title">
+        <h2><b>Khách sạn bình dân ở Đà Nẵng</b></h2>
+      </div>
+      <div class="product-galary-one-content-product">
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/213490721.jpg?k=800fd2b0afd1ea6e5211c99d96f672f11fc61d947be119442268bc8821839a87&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/389604482.jpg?k=8a82818156e6129f2ffa8aba3bf29c0aed6f0b5c323e9af8864d15c50f23477c&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Merry Land Hotel Da Nang</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/441969495.jpg?k=dd5677a85dee2b51810a955b7892669a8a93bc1f24fe2769d219b168e3a1ff18&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Flower Boutique Hotel</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/419569762.jpg?k=be8c4fbb2fc83fd65f40e8ecc91205a7453346ea79b8defe27e12f76fc7b1572&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/292022931.webp?k=89649596e8cc03ca7e88e9b90e86049f48faf86868aace1cff4116e53b4b8bf1&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/253999826.webp?k=984492f105cb9acf6dbaf498d30953bb24f37dd74e244858dd905cbb339a89ae&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/239846786.webp?k=382e9f0a6996bd108ea6d6b03316053ccc9806ff56f66243a868f33659903aa3&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/437821011.webp?k=49ccee0f427c5761caa57e8a7dda6c437cd86e247d9f09c31425e1ef6da7af0b&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/382803145.webp?k=ce72a4dc50364670e67dcd508f1568a5db460e7ba790267925acd6d9843218e6&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/344692963.webp?k=a0f76f1838aa069023df97b43c70146442555e7f813ec5cf6f059259817c1d9f&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/449584038.webp?k=0feefd3dd446ae29ce117df8c68103cd005905fa83e654b5eda958134b0a4ed9&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+        <div class="product-galary-one-content-product-item">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/270x200/363977953.webp?k=48e01f2649a2f8ce0a122750d143ad8d86a25156331b27f87ba5030b2832a217&o=" alt="">
+          <div class="product-galary-one-content-product-item-text">
+            <li><b>Mercure Danang French Village Bana Hills</b></li>
+            <li>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </li>
+            <li><small>Khách sạn ở Đà Nẵng</small></li>
+            <li><i class="fa-solid fa-check" style="color: #1eff00;"></i><span style="color: #1eff00">Phổ biến với khách đặt khách sạn ở Đà Nẵng</span></li>
+            <li><b>8,2 Rất tốt</b><small> 1.671 đánh giá</small></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h1 style="text-align: center">Xem bản đồ</h1>
+    <div style="margin-left: 500px" >
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.744482722349!2d108.20977277505358!3d16.078743884602122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421847a1230591%3A0x5a5c3bd36a8bd2b9!2zMDIgVGhhbmggU8ahbiwgVGhhbmggQsOsbmgsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1685828994833!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</body>
+</html>

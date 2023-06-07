@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink=""><img width="50px" src="https://img.icons8.com/?size=512&id=13963&format=png"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink=""><i class="fa-solid fa-house" style="color: #005eff;"></i>Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/customer"><i class="fa-solid fa-users" style="color: #0040ff;"></i>Khách hàng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/employee"><i class="fa-sharp fa-solid fa-user-tie" style="color: #005cfa;"></i>Nhân viên</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/service"><i class="fa-brands fa-servicestack" style="color: #005eff;"></i>Dịch vụ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/hopdong"><i class="fa-solid fa-file-signature" style="color: #005eff;"></i>Hợp đồng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dangkisudungdichvu"><i class="fa-sharp fa-solid fa-address-card" style="color: #0052e0;"></i>Đăng kí sử dụng dịch vụ</a>
+<!--        <li class="nav-item">-->
+<!--          <a style="background-color: white; color: #005eff; margin-left: 50px" class="nav-link" routerLink="/dangnhap">Đăng nhập</a>-->
+<!--        </li>-->
+        <li>
+        <app-login></app-login>
+      </li>
+        <li>
+          <app-signup></app-signup>
+<!--          <a style="background-color: white; color: #005eff; margin-left: 10px"  class="nav-link" routerLink="/dangki">Đăng kí</a>-->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

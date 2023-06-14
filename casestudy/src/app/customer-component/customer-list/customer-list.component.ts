@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TypeCustomer} from '../../model/type-customer';
 import {TypeCustomerServiceService} from '../../service/type-customer-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-list',
@@ -32,24 +33,41 @@ export class CustomerListComponent implements OnInit {
   formCustomer: FormGroup;
   id: string;
   typeCustomers: TypeCustomer[];
-  currentPage = 1;
+  colorBg = 'none';
+  color = 'white';
   mgs = false;
+  p = 1;
   // tslint:disable-next-line:max-line-length
   constructor(private serviceService: CustomerServiceService, private r: Router, private typeCustomerServiceService: TypeCustomerServiceService) {
     this.typeCustomerServiceService.findAll().subscribe(next => {
       this.typeCustomers = next;
     });
+    // Swal.fire({
+    //   title: 'Xin chào!',
+    //   text: 'Chào mừng bạn đến với trang web của chúng tôi.',
+    //   imageUrl: 'https://kenh14cdn.com/thumb_w/600/203336854389633024/2022/5/7/photo1651917750649-165191775103228158924.gif',
+    //   imageWidth: 400,
+    //   imageHeight: 400,
+    //   imageAlt: 'Custom image',
+    // });
   }
 
   ngOnInit(): void {
-    // this.customers = this.serviceService.findAll();
-    // this.serviceService.findAll().subscribe(next => {
-    //   this.customers = next;
-    // });
-    this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
+    this.serviceService.findAll().subscribe(next => {
       this.customers = next;
     });
-    this.page_sum();
+    this.formCustomer = new FormGroup({
+      // tslint:disable-next-line:radix
+      id: new FormControl(''),
+      link: new FormControl(''),
+      nameCustomer: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
+      birthday: new FormControl('', [Validators.required ]),
+      idCard: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{9,12}$/)]),
+      typeCustomer: new FormControl(''),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern(/^(09|84\+9)(0|1)\d{8}$/)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      address: new FormControl('', [Validators.required]),
+    });
   }
   getCustomerDelete(id: string) {
     this.serviceService.findById(id).subscribe(next => {
@@ -69,25 +87,49 @@ export class CustomerListComponent implements OnInit {
       phoneNumber: new FormControl(this.customer.phoneNumber, [Validators.required, Validators.pattern(/^(09|84\+9)(0|1)\d{8}$/)]),
       email: new FormControl(this.customer.email, [Validators.required, Validators.email]),
       address: new FormControl(this.customer.address, [Validators.required]),
+      link: new FormControl(this.customer.link)
           });
     });
   }
 
   delete(id: string | undefined) {
     this.serviceService.deleteCustomer(id).subscribe( next => {
-      this.serviceService.paginate(this.currentPage, 12).subscribe(next2 => {
+      this.serviceService.findAll().subscribe(next2 => {
         this.customers = next2;
       });
-      this.page_sum();
       this.formCustomer.reset();
+    });
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Xóa thành công',
+      showConfirmButton: false,
+      color: this.color,
+      background: this.colorBg,
+      timer: 1500
     });
   }
 
   update() {
       const customer = this.formCustomer.value;
-      customer.typeCustomer = this.typeCustomerServiceService.findById(customer.typeCustomer);
-      this.serviceService.updateCustomer(customer.id, customer).subscribe();
-      this.reloadPage();
+      this.typeCustomerServiceService.findById(customer.typeCustomer).subscribe(next => {
+      customer.typeCustomer = next;
+      this.serviceService.updateCustomer(customer.id, customer).subscribe(next2 => {
+        this.serviceService.findAll().subscribe(next3 => {
+          this.customers = next3;
+        });
+      });
+      this.r.navigateByUrl('customer');
+    });
+      Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Cập nhật thành công',
+      showConfirmButton: false,
+      color: this.color,
+      background: this.colorBg,
+      timer: 1500
+    });
   }
   reloadPage() {
     location.reload();
@@ -95,7 +137,15 @@ export class CustomerListComponent implements OnInit {
 
   search(inputSearch: HTMLInputElement) {
     if (inputSearch.value === '') {
-      alert('Input search');
+      Swal.fire({
+        title: 'Vui lòng nhập thông tin cần tìm kiếm',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
     } else {
       this.serviceService.search(inputSearch.value).subscribe(next => {
         this.customers = next;
@@ -108,56 +158,31 @@ export class CustomerListComponent implements OnInit {
     }
   }
 
-  page_next() {
-    this.serviceService.findAll().subscribe(next => {
-      this.customers2 = next;
-    });
-    this.sumPage = Math.floor(this.customers2.length / 12);
-    if (this.currentPage < this.sumPage + 1) {
-      this.currentPage ++;
-      this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
-        this.customers = next;
-      });
-    }
-  }
-  page_sum() {
-    this.serviceService.findAll().subscribe(next => {
-      this.customers2 = next;
-    });
-    this.sumPage = Math.floor(this.customers2.length / 12);
-  }
-
-  page_prev() {
-    if (this.currentPage > 1) {
-      this.currentPage --;
-      this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
-        this.customers = next;
-      });
-    }
-  }
-
-  page_first() {
-    this.currentPage = 1;
-    this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
-      this.customers = next;
-    });
-  }
-  page_last() {
-    this.serviceService.findAll().subscribe(next => {
-      this.customers2 = next;
-    });
-    this.sumPage = Math.floor(this.customers2.length / 12);
-    this.currentPage = this.sumPage + 1;
-    this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
-      this.customers = next;
-    });
-  }
-
-  page_current(currentPage: number) {
-    this.page_sum();
-    this.currentPage = currentPage;
-    this.serviceService.paginate(this.currentPage, 12).subscribe(next => {
-      this.customers = next;
+  addCustomer() {
+    debugger;
+    const customer  = this.formCustomer.value;
+    // this.typeCustomerServiceService.findById(customer.typeCustomer).subscribe(next => {
+    //   customer.typeCustomer = next;
+    // });
+    // tslint:disable-next-line:radix
+    customer.id = 'KH-' + parseInt(String((Math.random() * 100000)));
+    console.log(customer);
+    this.serviceService.addCustomer(customer).subscribe(next => {
+        this.serviceService.findAll().subscribe(next2 => {
+          this.customers = next2;
+        });
+        this.formCustomer.reset();
+      }, error => {},
+      () => {},
+    );
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Thêm thành công',
+      background: this.colorBg,
+      color: this.color,
+      showConfirmButton: false,
+      timer: 1500
     });
   }
 }

@@ -27,7 +27,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let s of services ; index as i">
-    <td scope="row">{{s.idService}}</td>
+    <td scope="row">{{s.id}}</td>
     <td>{{s.nameService}}</td>
     <td>{{s.acreage}}</td>
     <td>{{s.numberOfFloors}}</td>
@@ -36,8 +36,8 @@
     <td>{{s.status}}</td>
     <td>Kiểu thuê: {{s.typeService.nameTypeService}} Giá:{{s.typeService.price}}</td>
     <td>
-      <a style="margin-right: 10px"  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#update"  (click)=getServiceUpdate(s.idService)><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #8cff00;"></i></a>
-      <a  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete"  (click)=getServiceDelete(s.idService)><i class="fa-solid fa-trash-can" style="color: #ff0000;"></i></a>
+<!--      <a style="margin-right: 10px"  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#update"  (click)=getServiceUpdate(s.idService)><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #8cff00;"></i></a>-->
+<!--      <a  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete"  (click)=getServiceDelete(s.idService)><i class="fa-solid fa-trash-can" style="color: #ff0000;"></i></a>-->
     </td>
   </tr>
   </tbody>
@@ -56,7 +56,7 @@
       <div class="modal-body">
         <p>Bạn có chắc chắn muốn xóa dịch vụ này không?</p>
         <ul>
-          <li>Id Service: {{ service?.idService }}</li>
+          <li>Id Service: {{ service?.id }}</li>
           <li>Name Service: {{ service?.nameService }}</li>
           <li>Acreage: {{ service?.acreage }}</li>
           <li>Number Of Floors: {{ service?.numberOfFloors }}</li>
@@ -68,7 +68,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button (click)="delete()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Delete</button>
+<!--        <button (click)="delete()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Delete</button>-->
       </div>
     </div>
   </div>

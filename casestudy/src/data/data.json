@@ -1,242 +1,158 @@
 {
   "customer": [
     {
-      "id": "KH-6823126",
-      "nameCustomer": "Nguyễn Duy\tVăn",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i5.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
       "id": "KH-332",
-      "nameCustomer": "Nguyễn Duy\tVăn",
+      "nameCustomer": "Kỉixi",
       "birthday": "2023-06-21",
       "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i6.jpg",
       "typeCustomer": {
         "id": "TS-3",
         "nameTypeCustomer": "Gold"
       },
       "phoneNumber": "09121465524",
       "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-68122236",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i7.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/upload/images/Background%20Hero/Krixi.jpg"
     },
     {
       "id": "KH-68123226",
-      "nameCustomer": "Vo Kim Thanh",
+      "nameCustomer": "Tel'Annas",
       "birthday": "2023-06-21",
       "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i8.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-682126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i9.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-6812226",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i10.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-6841226",
-      "nameCustomer": "Le khang",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i11.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-6811226",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i12.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-681126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i13.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-683126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i14.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-682126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i15.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-368126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i16.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-681446",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i17.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-38126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i18.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-68126",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-21",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i19.jpg",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-57821",
-      "nameCustomer": "Tran Van Anh",
-      "birthday": "2023-06-07",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i20.jpg",
-      "typeCustomer": {
-        "id": "TS-4",
-        "nameTypeCustomer": "Silver"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ, Tiên Phước, Quảng Nam, le le"
-    },
-    {
-      "id": "KH-30788",
-      "nameCustomer": "Le Thanh Tu",
-      "birthday": "2023-06-16",
-      "idCard": "2324345454",
-      "link": "https://htran844.github.io/hihi/img/ig/i21.jpg",
       "typeCustomer": {
         "id": "TS-2",
         "nameTypeCustomer": "Platinium"
       },
       "phoneNumber": "09121465524",
-      "email": "iob77284@nezid.com",
-      "address": "Tien Son"
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/upload/images/Background%20Hero/Tel'Annas.jpg"
+    },
+    {
+      "id": "KH-6812226",
+      "nameCustomer": "Lumburr",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-6",
+        "nameTypeCustomer": "RubyRuby"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://cdn.sforum.vn/sforum/wp-content/uploads/2022/01/lumburr-avt.jpg"
+    },
+    {
+      "id": "KH-6841226",
+      "nameCustomer": "Maloch",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/skin/55b9bf4fb03f6003cfd70c03f75075b25c0def90947e0.jpg"
+    },
+    {
+      "id": "KH-6811226",
+      "nameCustomer": "Grakk",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-1",
+        "nameTypeCustomer": "Diamond"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/skin/6e915f887da89ab7e327625a739c75c05ef5e9788f06e.jpg"
+    },
+    {
+      "id": "KH-681126",
+      "nameCustomer": "ZuKa Gấu béo",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://cdn.tgdd.vn/2020/08/content/Untitled-1-800x450.jpg"
+    },
+    {
+      "id": "KH-683126",
+      "nameCustomer": "Cresht",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://cdn.tgdd.vn/2020/08/content/Untitled-1-800x450.jpg"
+    },
+    {
+      "id": "KH-682126",
+      "nameCustomer": "Liliana",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/skin/4b3a1b156a571f4c9cf270dabeb637c25aa0b6e339303.jpg"
+    },
+    {
+      "id": "KH-368126",
+      "nameCustomer": "Gildur",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/upload/images/Background%20Hero/Gildur.jpg"
+    },
+    {
+      "id": "KH-681446",
+      "nameCustomer": "Lauriel",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/skin/ef13b29ffd78bd266a4a076030458fa35d6f9976e118d.jpg"
+    },
+    {
+      "id": "KH-38126",
+      "nameCustomer": "Kil'Groth",
+      "birthday": "2023-06-21",
+      "idCard": "3455465666",
+      "typeCustomer": {
+        "id": "TS-3",
+        "nameTypeCustomer": "Gold"
+      },
+      "phoneNumber": "09121465524",
+      "email": "exam@gmail.com",
+      "address": "Quang Nam",
+      "link": "https://lienquan.garena.vn/files/upload/images/Background%20Hero/Kil'groth.jpg"
     },
     {
       "id": "KH-61703",
@@ -281,34 +197,6 @@
       "address": "Tiên Mỹ, Tiên Phước, Quảng Nam"
     },
     {
-      "id": "KH-65831",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-28",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i24.jpg",
-      "typeCustomer": {
-        "id": "TS-2",
-        "nameTypeCustomer": "Platinium"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ, Tiên Phước, Quảng Nam, le le"
-    },
-    {
-      "id": "KH-4330",
-      "nameCustomer": "Vo Kim Thanh 144",
-      "birthday": "2023-06-23",
-      "idCard": "3455465666",
-      "link": "https://htran844.github.io/hihi/img/ig/i24.jpg",
-      "typeCustomer": {
-        "id": "TS-4",
-        "nameTypeCustomer": "Silver"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ"
-    },
-    {
       "id": "KH-6",
       "nameCustomer": "Vo Kim Thanh 2",
       "birthday": "2023-05-14",
@@ -320,34 +208,6 @@
       },
       "phoneNumber": "09121465524",
       "email": "iob77284@nezid.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-7",
-      "nameCustomer": "Lê Văn\tTrường",
-      "birthday": "2023-06-22",
-      "idCard": 190001221,
-      "link": "https://htran844.github.io/hihi/img/ig/i2.jpg",
-      "typeCustomer": {
-        "id": "TS-1",
-        "nameTypeCustomer": "Diamond"
-      },
-      "phoneNumber": "09121465524",
-      "email": "vothanh@gmail.com",
-      "address": "Quang Nam"
-    },
-    {
-      "id": "KH-8",
-      "nameCustomer": "Bạch Ngọc\tBông",
-      "birthday": "2023-06-22",
-      "idCard": 190001221,
-      "link": "https://htran844.github.io/hihi/img/ig/i3.jpg",
-      "typeCustomer": {
-        "id": "TS-1",
-        "nameTypeCustomer": "Diamond"
-      },
-      "phoneNumber": "09121465524",
-      "email": "vothanh@gmail.com",
       "address": "Quang Nam"
     },
     {
@@ -12361,146 +12221,6 @@
       "phoneNumber": "09121465524",
       "email": "exam@gmail.com",
       "address": "Tiên Mỹ, Tiên Phước, Quảng Nam"
-    },
-    {
-      "id": "KH-84457",
-      "link": "https://htran844.github.io/hihi/img/fb/d4.jpg",
-      "nameCustomer": "Le Ha Linh",
-      "birthday": "2023-06-16",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ"
-    },
-    {
-      "id": "KH-6085",
-      "link": "https://htran844.github.io/hihi/img/ig/i38.jpg",
-      "nameCustomer": "Vo Kim Thanh",
-      "birthday": "2023-06-19",
-      "idCard": "190001221",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09021465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ, Tiên Phước, Quảng Nam"
-    },
-    {
-      "id": "KH-25787",
-      "link": "https://htran844.github.io/hihi/img/ig/i30.jpg",
-      "nameCustomer": "Vo Kim Thanh 144",
-      "birthday": "2023-05-30",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ"
-    },
-    {
-      "id": "KH-97061",
-      "link": "https://htran844.github.io/hihi/img/ig/i29.jpg",
-      "nameCustomer": "Vo Kim Thanh  2",
-      "birthday": "2023-06-08",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-4",
-        "nameTypeCustomer": "Silver"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Mỹ, Tiên Phước, Quảng Nam, le le"
-    },
-    {
-      "id": "KH-13782",
-      "link": "https://scontent.fdad7-1.fna.fbcdn.net/v/t1.15752-9/348960014_622480849830782_5480213805096831125_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=DnTWyJUk1ZMAX8wqi4j&_nc_ht=scontent.fdad7-1.fna&oh=03_AdR_zGgbCu06eb_MaVTWa_4tyWZS8s9fDeIiCUnuMDGtMw&oe=64A6017A",
-      "nameCustomer": "Nguyen Ha Quyen",
-      "birthday": "2023-06-16",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Tiên Kì, Tiên Phước, Quảng Nam, le le"
-    },
-    {
-      "id": "KH-27065",
-      "link": "https://scontent.fdad7-1.fna.fbcdn.net/v/t39.30808-6/352359179_263884016195267_4304290704142693542_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=2i3MVBE4zz0AX-M9cio&_nc_ht=scontent.fdad7-1.fna&oh=00_AfA0V64DH24vpjcRRD6MYuczMbpl2lviK6Mic_FjD7FghA&oe=6483D3DA",
-      "nameCustomer": "Rimyy",
-      "birthday": "2023-06-09",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-4",
-        "nameTypeCustomer": "Silver"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Ngãi"
-    },
-    {
-      "id": "KH-72424",
-      "link": "https://duhocchaudaiduong.edu.vn/hinh-anh-con-gai-cute-de-thuong/imager_421.jpg",
-      "nameCustomer": "cute de thương",
-      "birthday": "2023-06-20",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Ngãi"
-    },
-    {
-      "id": "KH-15989",
-      "link": "https://www.vietnamfineart.com.vn/wp-content/uploads/2023/03/anh-gai-dep-de-thuong-2.jpg",
-      "nameCustomer": "Dieu Linh",
-      "birthday": "2023-06-16",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "6"
-    },
-    {
-      "id": "KH-83867",
-      "link": "https://i.pinimg.com/736x/c1/4d/43/c14d431d0bfafb92d3900bbc38284e26.jpg",
-      "nameCustomer": "Dieu Lu",
-      "birthday": "2023-06-09",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-4",
-        "nameTypeCustomer": "Silver"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quang Ngãi"
-    },
-    {
-      "id": "KH-1302",
-      "link": "https://scontent.fdad1-4.fna.fbcdn.net/v/t39.30808-6/344881696_932771321269136_4034308683255133862_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=uQ9z8dW3zBwAX-ax74g&_nc_ht=scontent.fdad1-4.fna&oh=00_AfA3FipGN2YeTOESkz-4VSF7cOL8mEE98YOYBDFFC1lSNg&oe=648454BB",
-      "nameCustomer": "Thành Đầu Bùi",
-      "birthday": "2023-06-18",
-      "idCard": "3455465666",
-      "typeCustomer": {
-        "id": "TS-3",
-        "nameTypeCustomer": "Gold"
-      },
-      "phoneNumber": "09121465524",
-      "email": "exam@gmail.com",
-      "address": "Quảng Ngãi"
     }
   ],
   "employee": [
@@ -12639,6 +12359,64 @@
     {
       "id": "TS-6",
       "nameTypeCustomer": "RubyRuby"
+    }
+  ],
+  "services": [
+    {
+      "id": "DV-1",
+      "nameService": "Dịch vụ hồ bơi",
+      "acreage": 120,
+      "numberOfFloors": 12,
+      "maximumNumberOfPeople": 50,
+      "rentalCosts": 12000000,
+      "status": "Thuê theo năm",
+      "typeService": {
+        "idTypeService": "KT-1",
+        "nameTypeService": "Năm",
+        "price": 120000000
+      }
+    },
+    {
+      "id": "DV-2",
+      "nameService": "Dịch vụ hồ tắm",
+      "acreage": 120,
+      "numberOfFloors": 12,
+      "maximumNumberOfPeople": 50,
+      "rentalCosts": 12000000,
+      "status": "Thuê theo năm",
+      "typeService": {
+        "idTypeService": "KT-1",
+        "nameTypeService": "Năm",
+        "price": 120000000
+      }
+    },
+    {
+      "id": "DV-3",
+      "nameService": "Dịch vụ hồ biển",
+      "acreage": 120,
+      "numberOfFloors": 12,
+      "maximumNumberOfPeople": 50,
+      "rentalCosts": 12000000,
+      "status": "Thuê theo năm",
+      "typeService": {
+        "idTypeService": "KT-1",
+        "nameTypeService": "Năm",
+        "price": 120000000
+      }
+    },
+    {
+      "id": "DV-4",
+      "nameService": "Dịch vụ hồ hồ",
+      "acreage": 120,
+      "numberOfFloors": 12,
+      "maximumNumberOfPeople": 50,
+      "rentalCosts": 12000000,
+      "status": "Thuê theo năm",
+      "typeService": {
+        "idTypeService": "KT-1",
+        "nameTypeService": "Năm",
+        "price": 120000000
+      }
     }
   ]
 }

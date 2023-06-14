@@ -14,18 +14,8 @@ export class ServiceListComponent implements OnInit {
   constructor(private serviceS: ServiceServiceService) { }
 
   ngOnInit(): void {
-    this.services = this.serviceS.findAll();
-  }
-
-  getServiceDelete(idService: string) {
-     this.service = this.serviceS.findById(idService);
-  }
-
-  delete() {
-    this.serviceS.deleteCustomer(this.service.idService);
-  }
-
-  getServiceUpdate(idService: string) {
-    this.service = this.serviceS.findById(idService);
+     this.serviceS.findAll().subscribe(next => {
+       this.services = next;
+     });
   }
 }

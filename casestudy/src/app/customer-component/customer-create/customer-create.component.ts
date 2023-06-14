@@ -15,9 +15,6 @@ export class CustomerCreateComponent implements OnInit {
   formCustomer: FormGroup;
   typeCustomers: TypeCustomer[];
   customers: Customer[];
-  customers2: Customer[];
-  currentPage = 1;
-  sumPage: number;
 
   constructor(private s: CustomerServiceService, private  r: Router, private typeCustomerServiceService: TypeCustomerServiceService) {
     this.typeCustomerServiceService.findAll().subscribe(next => {
@@ -49,30 +46,20 @@ export class CustomerCreateComponent implements OnInit {
     customer.id = 'KH-' + parseInt(String((Math.random() * 100000)));
     console.log(customer);
     this.s.addCustomer(customer).subscribe(next => {
-        this.s.paginate(this.currentPage, 12).subscribe(next2 => {
+        this.s.findAll().subscribe(next2 => {
           this.customers = next2;
         });
-        this.page_sum();
         this.formCustomer.reset();
     }, error => {},
       () => {},
     );
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'Thêm thành công',
       showConfirmButton: false,
       timer: 1500
     });
-  }
-  reloadPage() {
-    location.reload();
-  }
-  page_sum() {
-    this.s.findAll().subscribe(next => {
-      this.customers2 = next;
-    });
-    this.sumPage = Math.floor(this.customers2.length / 12);
   }
 
 }

@@ -1,7 +1,7 @@
 import {TypeService} from './type-service';
 
 export interface Service {
-  idService?: string;
+  id?: string;
   nameService?: string;
   acreage?: number;
   numberOfFloors?: number;

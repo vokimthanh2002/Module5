@@ -198,5 +198,49 @@ h1 {
 .modal-body {
   padding: 0;
 }
-
-
+.paging {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+/*//create*/
+.modal {
+  Z-index: 99999;
+}
+.modal-body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+.modal-header {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+.modal-footer {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+.form-label {
+  color: white;
+}
+.modal-title {
+  color: white;
+}
+.modal-content {
+  width: 600px;
+}
+.btn {
+  color: #01c7f5;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,47,47,1) 100%);
+}
+.btn:hover {
+  border-collapse: collapse;
+  background-image: radial-gradient(circle, #f6f6f6 0%, #00d1ff 100%);
+  color: #000000;
+}
+li {
+  color: white;
+}
+.delete-p {
+  color: white;
+}

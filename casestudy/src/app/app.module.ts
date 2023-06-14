@@ -20,6 +20,7 @@ import { ServiceListComponent } from './service-component/service-list/service-l
 import { ServiceCreateComponent } from './service-component/service-create/service-create.component';
 import { ServiceUpdateComponent } from './service-component/service-update/service-update.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -40,13 +41,14 @@ import {HttpClientModule} from '@angular/common/http';
     ServiceCreateComponent,
     ServiceUpdateComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -11,7 +11,7 @@
           <a class="nav-link" routerLink=""><i class="fa-solid fa-house" style="color: #005eff;"></i>Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/customer"><i class="fa-solid fa-users" style="color: #0040ff;"></i>Khách hàng</a>
+          <a class="nav-link" (click)="reload('/customer')" routerLink="/customer"><i class="fa-solid fa-users" style="color: #0040ff;"></i>Khách hàng</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  routerLink="/employee"><i class="fa-sharp fa-solid fa-user-tie" style="color: #005cfa;"></i>Nhân viên</a>
